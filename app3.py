@@ -106,7 +106,7 @@ def main():
         total_spent=st.number_input('Total Spent', min_value=10, max_value=500, value=50)
     # Predict button
     if st.button('Predict Gender'):
-        result = predict_gender(age, items_purchased)
+        result = predict_gender(total_spent,age, items_purchased)
         st.success(f'Predicted Gender: {result}')
 
 # Run the app
