@@ -91,7 +91,7 @@ def predict_gender(age, items_purchased, total_spent):
         return 'Male'
     else:
         # This block should not execute if the model is properly trained
-        return None
+        return 'Cat'
 
 # Streamlit App
 def main():
