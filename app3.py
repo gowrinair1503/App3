@@ -83,14 +83,15 @@ model = LogisticRegression()
 model.fit(X, y) # Fit on the entire dataset for this example
 
 # Function to predict gender based on age and items purchased
-def predict_gender(total_spent,age, items_purchased):
-    prediction = model.predict([[total_spent,age, items_purchased]])[0]
+def predict_gender(age, items_purchased, total_spent):
+    prediction = model.predict([[age, items_purchased, total_spent]])[0]
     if prediction == 0:
         return 'Female'
     elif prediction == 1:
         return 'Male'
     else:
-        return 'Unknown'
+        # This block should not execute if the model is properly trained
+        return None
 
 # Streamlit App
 def main():
